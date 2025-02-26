@@ -20,8 +20,8 @@ app.config(function ($routeProvider, $locationProvider) {
         controller: "appCtrl"
     })
     .when("/trajes", {
-        templateUrl: "/productos",
-        controller: "productosCtrl"
+        templateUrl: "/trajes",
+        controller: "trajesCtrl"
     })
     .otherwise({
         redirectTo: "/"
