@@ -61,3 +61,20 @@ def trajes():
     registros = cursor.fetchall()
 
     return render_template("trajes.html", trajes=registros)
+
+@app.route("/rentas")
+def rentas():
+    if not con.is_connected():
+        con.reconnect()
+
+    cursor = con.cursor(dictionary=True)
+    sql    = """
+    SELECT * FROM rentas INNER JOIN trajes ON rentas.idTraje = trajes.idTraje
+
+    LIMIT 10 OFFSET 0
+    """
+
+    cursor.execute(sql)
+    registros = cursor.fetchall()
+
+    return render_template("rentas.html", rentas=registros)
