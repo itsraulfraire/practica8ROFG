@@ -1,0 +1,22 @@
+<table class="table table-sm table-responsive">
+    <thead class="table-active">
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Fecha Hora Inicio</th>
+            <th>Fecha Hora Fin</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for renta in rentas %}
+        <tr>
+            <td>{{ renta.idTraje }}</td>
+            <td>{{ renta.nombreCorto }}</td>
+            <td>{{ renta.descripcionRenta }}</td>
+            <td>{{ renta.fechaHoraInicio }}</td>
+            <td>{{ renta.fechaHoraFin }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
